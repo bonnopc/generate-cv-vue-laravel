@@ -1,0 +1,1 @@
+<bottom-navbar-component></bottom-navbar-component>
