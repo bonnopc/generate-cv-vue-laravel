@@ -44,11 +44,17 @@ Vue.component('themes-component', require('./components/pages/themes.vue'));
 Vue.component('settings-component', require('./components/pages/settings.vue'));
 
 // Input Forms
+Vue.component('academic-info-component', require('./components/input-forms/academicInfo.vue'));
 Vue.component('basic-info-component', require('./components/input-forms/basicInfo.vue'));
 Vue.component('career-info-component', require('./components/input-forms/careerInfo.vue'));
+Vue.component('certifications-component', require('./components/input-forms/certifications.vue'));
+Vue.component('employment-history-component', require('./components/input-forms/employmentHistory.vue'));
+Vue.component('languages-component', require('./components/input-forms/languages.vue'));
+Vue.component('personal-info-component', require('./components/input-forms/personalInfo.vue'));
+Vue.component('references-component', require('./components/input-forms/references.vue'));
+Vue.component('trainings-component', require('./components/input-forms/trainings.vue'));
 
 // window.eventHub = new Vue();
-
 
 // exports.eventHub = eventHub;
 

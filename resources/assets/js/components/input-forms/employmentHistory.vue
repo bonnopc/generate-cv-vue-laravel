@@ -1,6 +1,6 @@
 <template>
     <div class="card-text">
-        <p>Career Info</p>
+        <p>Employment History</p>
     </div>
 </template>
 

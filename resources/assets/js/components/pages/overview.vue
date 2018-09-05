@@ -60,7 +60,13 @@ export default {
             inputGroups: [
                 {id: "basic_info", componentName: "basic-info-component", heading: "Basic Info"},
                 {id: "career_info", componentName: "career-info-component", heading: "Career Info"},
-                {id: "basic_info2", componentName: "basic-info-component", heading: "Basic Info 2"}
+                {id: "personal_info", componentName: "personal-info-component", heading: "Personal Info"},
+                {id: "academic_info", componentName: "academic-info-component", heading: "Academic Info"},
+                {id: "certifications", componentName: "certifications-component", heading: "Certifications"},
+                {id: "employment_history", componentName: "employment-history-component", heading: "Employment History"},
+                {id: "languages", componentName: "languages-component", heading: "Languages"},
+                {id: "references", componentName: "references-component", heading: "References"},
+                {id: "trainings", componentName: "trainings-component", heading: "Trainings"},
             ],
             selectedInputComponent: {}
         }
@@ -119,35 +125,27 @@ export default {
         },
         cardCollapse(idHint){
             let inst = this;
-            console.log("inst.selectedInputComponent",inst.selectedInputComponent);
             this.inputGroups.forEach((element,index) => {
                 let instance = $(`#${element.id}_body`);
                 
                 if(!_.isEmpty(inst.selectedInputComponent) && inst.selectedInputComponent.id === element.id){
-                    console.log("firstCond");
+                    inst.selectedInputComponent = inst.inputGroups[index+1];
                     this.cardCollapse(index+1);
                     return false;
                 } else {
                     if(element.id !== idHint){
-                        console.log("secondCond");
                         if(!instance.hasClass('card-collapsed')){
                             instance.slideUp();
                             instance.addClass('card-collapsed');
                         }
                     } else {
-                        console.log("thirdCond");
-                        inst.selectedInputComponent = element;
+                        if(!_.isEqual(inst.selectedInputComponent,element)) inst.selectedInputComponent = element;
                         instance.slideDown();
                         if(instance.hasClass('card-collapsed')) instance.removeClass('card-collapsed');
                     }
                 }
-
-                
             });
-            
-            
         },
-        
         showError(idHint,value){
             $('#'+idHint).addClass("is-invalid");
             if(value == "default"){

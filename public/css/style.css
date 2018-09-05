@@ -1,3 +1,8 @@
+:root {
+    --primary: #343a40;
+    --font-color: rgba(255, 255, 255, 0.5);
+}
+
 .navbar-bottom{
     -webkit-box-shadow: 0;
     -moz-box-shadow: 0;
@@ -301,6 +306,12 @@ div.card{
 }
 
 .heading{
-    color: white;
+    color: var(--font-color);
     font-size: 110%;
+}
+
+@media (max-width: 767px) {
+    .user-content{
+        padding-bottom: 2.2rem;
+    }
 }
